@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_way/widgets/alert_screen.dart';
+import 'package:my_way/widgets/AlertScreen.dart';
+import 'package:my_way/layouts/ActivityBox.dart';
 
 void main() {
   runApp(MyApp());
@@ -55,11 +56,25 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
           child: Container(
-        child: Row(children: [
-          _widgetOptions.elementAt(_selectedIndex),
-          SnackBarMessage(),
-        ]),
-      )),
+              child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        /*
+            design MyWay main screen on activity
+          */
+        children: <Widget>[
+          // Expanded(
+          //     child: Container(
+          //         child: Column(children: [
+          //   _widgetOptions.elementAt(_selectedIndex),
+          //   SnackBarMessage(),
+          // ]))),
+          ActivityBox(
+              duration: 20,
+              image: 'http://via.placeholder.com/350x150',
+              name: 'my activity')
+          //https://isorepublic.com/photo/animal-face-close-cat/
+        ],
+      ))),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[

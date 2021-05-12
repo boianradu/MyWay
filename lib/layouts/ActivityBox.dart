@@ -13,19 +13,20 @@ class ActivityBox extends StatelessWidget {
         height: 120,
         child: Card(
             child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-              Image.network(image, width: 200.0, height: 200),
+              (image.contains("assets/images"))
+                  ? Image.asset(image)
+                  : Image.network(image, width: 200.0, height: 200),
               Expanded(
                   child: Container(
-                      height: 300,
                       padding: EdgeInsets.all(3),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
                           Text(this.name,
                               style: TextStyle(fontWeight: FontWeight.bold)),
-                          Text('$this.duration')
+                          Text("Duration:" + '$duration')
                         ],
                       )))
             ])));

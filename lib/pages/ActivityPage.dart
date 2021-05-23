@@ -9,7 +9,6 @@ class ActivityPage extends StatelessWidget {
 
   Widget build(BuildContext ctx) {
     return Scaffold(
-      // appBar: AppBar(title: Text(title)),
       body: ListView(
         shrinkWrap: true,
         padding: EdgeInsets.all(2),
